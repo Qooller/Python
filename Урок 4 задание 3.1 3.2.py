@@ -1,31 +1,32 @@
 #  Написать ф-ию factorial, которая принимает число,
 #  а возвращает его факториал
-a = int(input('Введите целое число a: '))
-def factorial():
+import time
+def factorial(a):
     b = 1
     i = 1
     while i != a+1:
         b = b * i
         i += 1
-    print(b)
+    return b
+re = factorial(10)
+print(re)
 
 #Написать декоратор timeit, которые с помощью метода
 #time библиотеки time  будет выводить
 #вам время исполнения​ ф-ии по её завершению
 
-import time
-def timeit(factorial):
-    def ttt():
-        time.clock()
+
+def timeit(fn):
+    def ttt(a):
+        start = time.time()
         print('Start my function')
-        factorial(1000)
+        fn(a)
         print('End my function')
-        print(time.clock())
+        print(time.time()- start)
     return ttt
+#@timeit
+#def factorial():
+#    print('Porcess')
+factorial = timeit(factorial)
 
-@timeit
-def factorial():
-    print('proc', a)
-
-
-print(timeit(1000))
+factorial(1000)

@@ -5,17 +5,24 @@
 # [старт, старт + шаг, старт + шаг*2...]. Если шаг положительное число, последним
 #  элементом списка будет наибольшее старт + i * шаг меньшее числа стоп. Если шаг
 #  отрицательное число, то последний элемент будет наименьшее старт + i * шаг большее числа стоп.
-start = 0
-h = 1
-stop =0
-def range(start, stop, h ):
+
+def my_range(start = 0, stop = 1, h = 1):
     sp = []
-    r = int(stop / h - start)
     i = 0
-    while i != r:
-        n =int(start + h * i)
-        sp.append(n)
-        i += 1
+    if h > 0 :
+        while stop > (start + h * i):
+            n = (start + h * i)
+            sp.append(n)
+            i += 1
+    else:
+        while stop < (start + h * i):
+            n = (start + h * i)
+            sp.append(n)
+            i += 1
     return sp
-p = range(2,60,2)
+p = my_range(2,60,10)
 print(p)
+rrr = []
+for j in range(2, 60, 10):
+    rrr.append(j)
+print(rrr)
