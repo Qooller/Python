@@ -9,7 +9,7 @@
 def my_range(start = 0, stop = 1, h = 1):
     sp = []
     i = 0
-    if h > 0 :
+    if h > 0:
         while stop > (start + h * i):
             n = (start + h * i)
             sp.append(n)
