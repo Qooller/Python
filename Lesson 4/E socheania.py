@@ -23,3 +23,14 @@ def C(n, k):
 
 
 print(C(n, k))
+
+def C1(n, k):
+    if n == k:
+        return 1
+    elif k == 0:
+        return 1
+    else:
+        return C1(n-1, k-1) + C1(n-1, k)
+
+
+print(C1(n, k))
